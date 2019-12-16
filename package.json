@@ -1,0 +1,23 @@
+{
+  "name": "todo-web",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapengbo0314/todo-list.git"
+  },
+  "author": "Pengbo Ma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mapengbo0314/todo-list/issues"
+  },
+  "homepage": "https://github.com/mapengbo0314/todo-list#readme",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
