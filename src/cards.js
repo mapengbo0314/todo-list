@@ -2,27 +2,46 @@
 
 const todo = (title, description, dueDate, priorty, completeion) => {
   let main = document.createElement("div");
+
   main.setAttribute("class", "mainCard");
   // template section?
-  const wholeSection = (elementType, type, name, todoType) => {
+  const wholeSection = (elementType, type, name, todoType, taskName) => {
     let secBar = document.createElement(elementType);
     secBar.setAttribute(type, name);
-    secBar.innerHTML = todoType;
+    secBar.innerHTML = taskName + todoType;
     return { secBar };
   };
   //title section
   //priorty section
-  const priot = wholeSection("a", "class", "prioCard", priorty);
+  const priot = wholeSection(
+    "a",
+    "class",
+    "prioCard",
+    priorty,
+    "Priority Level: "
+  );
 
-  const titles = wholeSection("div", "class", "titleCard", title);
+  const titles = wholeSection("div", "class", "titleCard", title, "");
 
   //description section
 
-  const desc = wholeSection("div", "class", "descCard", description);
+  const desc = wholeSection(
+    "div",
+    "class",
+    "descCard",
+    description,
+    "Description: "
+  );
 
   //dueDate using date-fns
 
-  const due = wholeSection("div", "class", "dueCard", dueDate);
+  const due = wholeSection(
+    "div",
+    "class",
+    "dueCard",
+    dueDate,
+    "Due date: &nbsp; &nbsp;&nbsp;&nbsp;"
+  );
 
   //Check Button
   //const check = wholeSection("input", "type", "checkbox", completeion);

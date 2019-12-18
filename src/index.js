@@ -18,3 +18,11 @@ const cook1 = todo(
   "very high"
 );
 cook1.output();
+const cook2 = todo(
+  "Cooking dinner!",
+  "wow! pengbo blahb albha blakhsdflkjasd;fkj ow! pengbo blahb albha blakhsdflkjasd;fkjow! pengbo blahb albha blakhsdflkjasd;fkj",
+  format(new Date(), "iiii"),
+  "very high",
+  true
+);
+cook2.output();
