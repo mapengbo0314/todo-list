@@ -1,15 +1,20 @@
-const todo = (title, description) => {
-  const output = () => {
-    return `${title} is listed to be done for the reasons of ${description}`;
-  };
+//import all other cards then call them
+import { todo } from "./cards";
+import { format, formatDistance, formatRelative, subDays } from "date-fns";
+let myTasks = [];
+const cook = todo(
+  "Cooking dinner!",
+  "wow! pengbo blahb albha blakhsdflkjasd;fkj ow! pengbo blahb albha blakhsdflkjasd;fkjow! pengbo blahb albha blakhsdflkjasd;fkj",
+  format(new Date(), "iiii"),
+  "very high",
+  true
+);
 
-  return { output };
-};
-
-const task1 = todo("Go sleep", "Cuz u got to go to work tommorow");
-
-let htmlfinder = document.getElementById("title");
-let task1input = document.createElement("p");
-task1input.textContent = task1.output();
-
-htmlfinder.appendChild(task1input);
+cook.output();
+const cook1 = todo(
+  "Cooking dinner!",
+  "wow!",
+  format(new Date(), "iiii"),
+  "very high"
+);
+cook1.output();
