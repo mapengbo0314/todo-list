@@ -1,6 +1,6 @@
 //setting up an factory card
 
-const todo = (title, description, dueDate, priorty, completeion) => {
+const todo = (title, description, dueDate, priorty) => {
   let main = document.createElement("div");
 
   main.setAttribute("class", "mainCard");
@@ -40,25 +40,29 @@ const todo = (title, description, dueDate, priorty, completeion) => {
     "class",
     "dueCard",
     dueDate,
-    "Due date: &nbsp; &nbsp;&nbsp;&nbsp;"
+    "Due date: &nbsp; &nbsp;&nbsp;"
   );
+  const deleteButton = wholeSection(
+    "input",
+    "type",
+    "button",
+    "Complete and Delete Task",
+    ""
+  );
+  deleteButton.secBar.setAttribute("class", "deleteCard");
+  deleteButton.secBar.setAttribute("value", "Complete and Delete Task");
 
-  //Check Button
-  //const check = wholeSection("input", "type", "checkbox", completeion);
-  //check.secBar.setAttribute("class", "checkCard");
-
-  //Complier to everything Output
   const output = () => {
     main.appendChild(titles.secBar);
     main.appendChild(priot.secBar);
     main.appendChild(desc.secBar);
     main.appendChild(due.secBar);
-
+    main.appendChild(deleteButton.secBar);
     let content = document.getElementById("content");
     content.setAttribute("class", "card");
     content.appendChild(main);
   };
-  return { output };
+  return { title, description, dueDate, priorty, output };
 };
 
 export { todo };
