@@ -1,3 +1,40 @@
-const addCards = () => {
+import { cardInput } from "./input";
+import { todo } from "./cards";
+
+const addCards = aray => {
   //adding cards
+
+  let card = document.getElementById("add");
+  //listens to the + button
+  card.addEventListener("click", function() {
+    cardInput.cardFunctions();
+    //calls the add new todo list function
+    addFun();
+  });
+  const addFun = () => {
+    let addCard = document.getElementById("addtodoBut");
+
+    //listens to the click and renders the new todo list
+    addCard.addEventListener("click", function() {
+      //we put all input as same class name to select
+      document.getElementById("formlocations").style.display = "none";
+      let myTodo = [];
+      document.querySelectorAll(".input").forEach((e, i) => {
+        myTodo.push(e.value);
+      });
+
+      let addNewTodo = todo(...myTodo);
+      console.log(addNewTodo);
+      //pushing it on to the aray, which in terms calls from the eventlistener, which is myTask
+      aray.push(addNewTodo);
+      localStorage.setItem("task", JSON.stringify(aray)); //same deal, store it
+      aray.map(x => x.output()); //re-render it by calling output on the new array
+      //turn it off
+      document.querySelectorAll(".form-popup").forEach(e => {
+        e.remove();
+      });
+    });
+  };
 };
+
+export { addCards };

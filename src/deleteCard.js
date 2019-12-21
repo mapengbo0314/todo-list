@@ -1,6 +1,7 @@
 import $ from "jQuery";
 
 const deleteCards = aray => {
+  //using this function to find the index and remove4 the element using jquery
   $(".deleteCard").on("click", function() {
     var index = $(".deleteCard").index(this);
 

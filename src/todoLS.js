@@ -24,29 +24,19 @@ var todoFunction = (() => {
     } else {
       const cook = todo(
         "Cooking dinner!",
-        "wow! pengbo blahb albha blakhsdflkjasd;fkj ow! pengbo blahb albha blakhsdflkjasd;fkjow! pengbo blahb albha blakhsdflkjasd;fkj",
-        format(new Date(), "iiii"),
+        "Hungry, needs food",
+        format(new Date(), "yyyy-MM-dd"),
         "very high",
         true
       );
       const cook1 = todo(
-        "Cooking dinner!",
-        "wow!",
-        format(new Date(), "iiii"),
+        "Go to sleep",
+        "beauty sleep",
+        format(new Date(), "yyyy-MM-dd"),
         "very high"
       );
-
-      const cook2 = todo(
-        "Cooking dinner!",
-        "wow! pengbo blahb albha blakhsdflkjasd;fkj ow! pengbo blahb albha blakhsdflkjasd;fkjow! pengbo blahb albha blakhsdflkjasd;fkj",
-        format(new Date(), "iiii"),
-        "very high",
-        true
-      );
-
       pushTask(cook);
       pushTask(cook1);
-      pushTask(cook2);
     }
   };
 

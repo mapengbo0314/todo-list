@@ -25,13 +25,7 @@ const todo = (title, description, dueDate, priorty) => {
 
   //description section
 
-  const desc = wholeSection(
-    "div",
-    "class",
-    "descCard",
-    description,
-    "Description: "
-  );
+  const desc = wholeSection("div", "class", "descCard", description, "");
 
   //dueDate using date-fns
 
@@ -49,15 +43,20 @@ const todo = (title, description, dueDate, priorty) => {
     "Complete and Delete Task",
     ""
   );
+  const saveButton = wholeSection("input", "type", "button", "Save Task", "");
   deleteButton.secBar.setAttribute("class", "deleteCard");
   deleteButton.secBar.setAttribute("value", "Complete and Delete Task");
-
+  saveButton.secBar.setAttribute("class", "saveCard");
+  saveButton.secBar.setAttribute("value", "Save Task");
+  titles.secBar.setAttribute("contenteditable", "true");
+  desc.secBar.setAttribute("contenteditable", "true");
   const output = () => {
     main.appendChild(titles.secBar);
     main.appendChild(priot.secBar);
     main.appendChild(desc.secBar);
     main.appendChild(due.secBar);
     main.appendChild(deleteButton.secBar);
+    main.appendChild(saveButton.secBar);
     let content = document.getElementById("content");
     content.setAttribute("class", "card");
     content.appendChild(main);
