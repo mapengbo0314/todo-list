@@ -11,6 +11,7 @@ const saveCards = aray => {
     alert("Your todo has been updated!");
     localStorage.setItem("task", JSON.stringify(aray));
   });
+  aray.map(x => x.output());
 };
 
 export { saveCards };

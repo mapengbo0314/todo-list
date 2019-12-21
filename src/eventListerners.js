@@ -10,10 +10,23 @@ const eventClearListener = () => {
   });
 };
 
-const eventRenderListener = aray => {
+const eventRenderListenerDel = aray => {
+  aray.map(x => x.output());
+
+  deleteCards(aray);
+};
+const eventRenderListenerAdd = aray => {
   aray.map(x => x.output());
   addCards(aray);
-  deleteCards(aray);
+};
+const eventRenderListenerSave = aray => {
+  aray.map(x => x.output());
+
   saveCards(aray);
 };
-export { eventClearListener, eventRenderListener };
+export {
+  eventClearListener,
+  eventRenderListenerAdd,
+  eventRenderListenerDel,
+  eventRenderListenerSave
+};

@@ -1,6 +1,11 @@
 import { todo } from "./cards";
 import { inputCard } from "./input";
-import { eventClearListener, eventRenderListener } from "./eventListerners";
+import {
+  eventClearListener,
+  eventRenderListenerAdd,
+  eventRenderListenerDel,
+  eventRenderListenerSave
+} from "./eventListerners";
 import { format, formatDistance, formatRelative, subDays } from "date-fns";
 
 var todoFunction = (() => {
@@ -43,7 +48,9 @@ var todoFunction = (() => {
   function init() {
     eventClearListener();
     prefun();
-    eventRenderListener(myTasks);
+    eventRenderListenerAdd(myTasks);
+    eventRenderListenerDel(myTasks);
+    eventRenderListenerSave(myTasks);
   }
   return { init };
 })();
