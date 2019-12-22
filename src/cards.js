@@ -61,6 +61,7 @@ const todo = (title, description, dueDate, priorty) => {
     content.setAttribute("class", "card");
     content.appendChild(main);
   };
+
   return { title, description, dueDate, priorty, output };
 };
 

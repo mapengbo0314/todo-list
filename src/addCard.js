@@ -1,5 +1,6 @@
 import { cardInput } from "./input";
 import { todo } from "./cards";
+import { eventRenderListenerDelSav } from "./eventListerners";
 
 const addCards = aray => {
   //adding cards
@@ -12,11 +13,8 @@ const addCards = aray => {
     addFun();
   });
   const addFun = () => {
-    let addCard = document.getElementById("addtodoBut");
-
     //listens to the click and renders the new todo list
-    addCard.addEventListener("click", function() {
-      //we put all input as same class name to select
+    $("#addtodoBut").on("click", function() {
       document.getElementById("formlocations").style.display = "none";
       let myTodo = [];
       document.querySelectorAll(".input").forEach((e, i) => {
@@ -28,11 +26,13 @@ const addCards = aray => {
       //pushing it on to the aray, which in terms calls from the eventlistener, which is myTask
       aray.push(addNewTodo);
       localStorage.setItem("task", JSON.stringify(aray)); //same deal, store it
+      console.log(JSON.parse(localStorage.getItem("task")));
       aray.map(x => x.output()); //re-render it by calling output on the new array
       //turn it off
       document.querySelectorAll(".form-popup").forEach(e => {
         e.remove();
       });
+      eventRenderListenerDelSav(aray);
     });
   };
 };

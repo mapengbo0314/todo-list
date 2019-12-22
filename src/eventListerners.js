@@ -9,24 +9,17 @@ const eventClearListener = () => {
     console.log("wow");
   });
 };
-
-const eventRenderListenerDel = aray => {
-  aray.map(x => x.output());
-
-  deleteCards(aray);
-};
 const eventRenderListenerAdd = aray => {
   aray.map(x => x.output());
   addCards(aray);
 };
-const eventRenderListenerSave = aray => {
+const eventRenderListenerDelSav = aray => {
   aray.map(x => x.output());
-
+  deleteCards(aray);
   saveCards(aray);
 };
 export {
   eventClearListener,
   eventRenderListenerAdd,
-  eventRenderListenerDel,
-  eventRenderListenerSave
+  eventRenderListenerDelSav
 };
