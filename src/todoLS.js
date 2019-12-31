@@ -26,17 +26,17 @@ var todoFunction = (() => {
       });
     } else {
       const cook = todo(
-        "Cooking dinner!",
-        "Hungry, needs food",
+        "Cook food",
+        "Preparing dinner",
         format(new Date(), "yyyy-MM-dd"),
-        "very high",
+        "High",
         true
       );
       const cook1 = todo(
-        "Go to sleep",
-        "beauty sleep",
+        "Sleep",
+        "Working early tomorrow",
         format(new Date(), "yyyy-MM-dd"),
-        "very high"
+        "Very High"
       );
       pushTask(cook);
       pushTask(cook1);

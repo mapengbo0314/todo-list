@@ -34,6 +34,13 @@ const addCards = aray => {
       });
       eventRenderListenerDelSav(aray);
     });
+    $("#closeWindow").on("click", function() {
+      document.getElementById("formlocations").style.display = "none";
+      document.querySelectorAll(".form-popup").forEach(e => {
+        e.remove();
+      });
+      eventRenderListenerDelSav(aray);
+    });
   };
 };
 

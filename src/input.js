@@ -18,6 +18,7 @@ const cardInput = (() => {
     descI.setAttribute("cols", "50");
     return { descI };
   };
+
   //Adding Due Date
   const dueDateCard = () => {
     let dueI = document.createElement("input");
@@ -57,6 +58,14 @@ const cardInput = (() => {
 
     return { subI };
   };
+  //Adding a hide button.
+  const removeCard = () => {
+    let close = document.createElement("input");
+    close.setAttribute("type", "button");
+    close.setAttribute("id", "closeWindow");
+    close.setAttribute("value", "Close");
+    return { close };
+  };
   //Adding Form, in which collects all the inputs
   const formCard = () => {
     let forms = document.createElement("form");
@@ -68,9 +77,10 @@ const cardInput = (() => {
     forms.appendChild(dueDateCard().dueI);
     forms.appendChild(proiCard().proI);
     forms.appendChild(submitCard().subI);
-
+    forms.appendChild(removeCard().close);
     return { forms };
   };
+
   //Adding Text Div, which encaps the Form card
   const wholeTextCard = () => {
     let text = document.createElement("div");
